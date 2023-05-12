@@ -12,7 +12,7 @@ class Login extends React.Component {
 
   isDisabledButton = () => {
     const { password, email } = this.state;
-    const validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const validEmail = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/;
     const five = 5;
 
     if (password.length > five && email.match(validEmail)) {
@@ -48,15 +48,19 @@ class Login extends React.Component {
           <input
             type="email"
             name="email"
+            placeholder="Email"
             onChange={ this.handleChange }
             data-testid="email-input"
           />
+
           <input
             type="password"
             name="password"
+            placeholder="Password"
             onChange={ this.handleChange }
             data-testid="password-input"
           />
+
           <button
             type="button"
             disabled={ isDisabled }

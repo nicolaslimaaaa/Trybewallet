@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
@@ -27,6 +28,10 @@ class Header extends Component {
     );
   }
 }
+
+Header.propTypes = {
+  email: PropTypes.any,
+}.isRequired;
 
 const mapStateToProps = (globalState) => ({
   email: globalState.user.email,
