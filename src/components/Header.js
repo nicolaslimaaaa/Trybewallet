@@ -40,12 +40,6 @@ class Header extends Component {
   }
 }
 
-// <p
-// data-testid="total-field"
-// >
-
-// </p>
-
 Header.propTypes = {
   email: PropTypes.any,
 }.isRequired;
