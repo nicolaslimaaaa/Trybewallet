@@ -1,4 +1,4 @@
-import { REQUEST_SUCCESSFUL, SAVE_EXPENSE } from '../actions';
+import { DELETE_EXPENSE, REQUEST_SUCCESSFUL, SAVE_EXPENSE } from '../actions';
 
 const INITIAL_STATE_WALLET = {
 
@@ -21,6 +21,13 @@ const wallet = (state = INITIAL_STATE_WALLET, action) => {
     return {
       ...state,
       expenses: [...state.expenses, action.payload],
+    };
+
+  case DELETE_EXPENSE:
+    return {
+      ...state,
+      expenses: [...state.expenses
+        .filter((expense) => expense.id !== action.payload)],
     };
   default:
     return state;

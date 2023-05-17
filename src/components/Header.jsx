@@ -18,15 +18,10 @@ class Header extends Component {
           data-testid="total-field"
         >
           {
-            expenses.length > 0 ? (
-              (expenses.reduce((acc, cur) => (
-                acc + (Number(cur.value) * Number(cur.exchangeRates[cur.currency].ask))
-              ), 0)).toFixed(2)
-            ) : (
-              0
-            )
+            (expenses.reduce((acc, cur) => (
+              acc + (Number(cur.value) * Number(cur.exchangeRates[cur.currency].ask))
+            ), 0)).toFixed(2)
           }
-
         </p>
 
         <div

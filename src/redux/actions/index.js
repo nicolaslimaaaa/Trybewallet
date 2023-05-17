@@ -5,6 +5,7 @@ export const REQUEST_SUCCESSFUL = 'REQUEST_SUCCESSFUL';
 export const REQUEST_FAILURE = 'REQUEST_FAILURE';
 export const REQUEST_START = 'REQUEST_START';
 export const SAVE_EXPENSE = 'SAVE_EXPENSE';
+export const DELETE_EXPENSE = 'DELETE_EXPENSE';
 
 export const addEmail = (email) => ({
   type: ADD_EMAIL,
@@ -42,3 +43,8 @@ export const fetchExpense = (state) => async (dispatch) => {
   const data = await fetchApi();
   dispatch(saveExpense({ ...state, exchangeRates: data }));
 };
+
+export const deleteExpense = (idPayload) => ({
+  type: DELETE_EXPENSE,
+  payload: idPayload,
+});
