@@ -6,6 +6,8 @@ export const REQUEST_FAILURE = 'REQUEST_FAILURE';
 export const REQUEST_START = 'REQUEST_START';
 export const SAVE_EXPENSE = 'SAVE_EXPENSE';
 export const DELETE_EXPENSE = 'DELETE_EXPENSE';
+export const EXPENSE_IN_EDITION = 'EXPENSE_IN_EDITION';
+export const EXPENSE_EDITED = 'EXPENSE_EDITED';
 
 export const addEmail = (email) => ({
   type: ADD_EMAIL,
@@ -36,7 +38,7 @@ export const fetchCoins = () => async (dispatch) => {
 
 export const saveExpense = (payload) => ({
   type: SAVE_EXPENSE,
-  payload: { ...payload },
+  payload,
 });
 
 export const fetchExpense = (state) => async (dispatch) => {
@@ -44,7 +46,17 @@ export const fetchExpense = (state) => async (dispatch) => {
   dispatch(saveExpense({ ...state, exchangeRates: data }));
 };
 
-export const deleteExpense = (idPayload) => ({
+export const deleteExpense = (payload) => ({
   type: DELETE_EXPENSE,
-  payload: idPayload,
+  payload,
+});
+
+export const expenseInEdition = (payload) => ({
+  type: EXPENSE_IN_EDITION,
+  payload,
+});
+
+export const expenseEdited = (payload) => ({
+  type: EXPENSE_EDITED,
+  payload,
 });

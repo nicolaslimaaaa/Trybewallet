@@ -1,4 +1,10 @@
-import { DELETE_EXPENSE, REQUEST_SUCCESSFUL, SAVE_EXPENSE } from '../actions';
+import {
+  DELETE_EXPENSE,
+  EXPENSE_EDITED,
+  EXPENSE_IN_EDITION,
+  REQUEST_SUCCESSFUL,
+  SAVE_EXPENSE,
+} from '../actions';
 
 const INITIAL_STATE_WALLET = {
 
@@ -28,6 +34,21 @@ const wallet = (state = INITIAL_STATE_WALLET, action) => {
       ...state,
       expenses: [...state.expenses
         .filter((expense) => expense.id !== action.payload)],
+    };
+
+  case EXPENSE_IN_EDITION:
+    return {
+      ...state,
+      editor: action.payload.editor,
+      idToEdit: action.payload.idToEdit,
+    };
+
+  case EXPENSE_EDITED:
+    return {
+      ...state,
+      editor: false,
+      expenses: state.expenses
+        .map((expense) => (expense.id === action.payload.id ? action.payload : expense)),
     };
   default:
     return state;
