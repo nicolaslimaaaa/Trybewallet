@@ -14,20 +14,9 @@ export const addEmail = (email) => ({
   email,
 });
 
-export const requestStart = () => ({
-  type: REQUEST_START,
-  isLoading: true,
-});
-
 export const requestSuccess = (payload) => ({
   type: REQUEST_SUCCESSFUL,
   payload,
-  isLoading: false,
-});
-
-export const requestFailure = (error) => ({
-  type: REQUEST_FAILURE,
-  payload: error,
   isLoading: false,
 });
 

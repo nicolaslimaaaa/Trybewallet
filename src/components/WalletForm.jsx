@@ -53,8 +53,6 @@ class WalletForm extends Component {
 
   handleClickButtonEdit = () => {
     const { dispatch } = this.props;
-    console.log(this.state);
-    console.log(dispatch(expenseEdited({ ...this.state })));
     dispatch(expenseEdited({ ...this.state }));
 
     this.setState({

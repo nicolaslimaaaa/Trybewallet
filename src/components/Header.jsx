@@ -37,6 +37,7 @@ class Header extends Component {
 
 Header.propTypes = {
   email: PropTypes.any,
+  expenses: PropTypes.arrayOf(PropTypes.shape({})),
 }.isRequired;
 
 const mapStateToProps = (globalState) => ({
