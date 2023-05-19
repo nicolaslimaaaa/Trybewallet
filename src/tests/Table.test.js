@@ -78,8 +78,6 @@ describe('Testa o componente Table', () => {
   it('Testa se ao editar uma despesa é a descrição e o estado global são alterados', async () => {
     renderWithRouterAndRedux(<Wallet />);
 
-    // , { initialState: mockExpenses }
-
     const inputValue = await screen.findByTestId('value-input');
     const inputDescription = await screen.findByTestId('description-input');
     const btnAddExpense = await screen.findByRole('button', { name: /adicionar despesa/i });
