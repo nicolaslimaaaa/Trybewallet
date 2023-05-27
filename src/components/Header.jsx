@@ -7,10 +7,10 @@ class Header extends Component {
     const { email, expenses } = this.props;
     return (
       <section
-        className="flex flex-col justify-center w-full items-start text-green-lol"
+        className="flex flex-col justify-start w-full items-center text-green-lol"
       >
         <div
-          className="flex"
+          className="flex w-full"
         >
           <p className="text-white">
             Usuário:
@@ -25,7 +25,7 @@ class Header extends Component {
         </div>
 
         <div
-          className="flex"
+          className="flex w-full"
         >
           <p
             className="text-white"

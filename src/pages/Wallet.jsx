@@ -7,7 +7,7 @@ class Wallet extends React.Component {
   render() {
     return (
       <div
-        className="w-full h-full flex flex-col px-20 py-12
+        className="min-w-screen h-full flex flex-col px-20 py-12
         items-center text-white"
       >
         <Header />

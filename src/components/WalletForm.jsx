@@ -69,10 +69,10 @@ class WalletForm extends Component {
     const { value, description } = this.state;
     return (
       <div
-        className="text-black w-full my-20"
+        className="text-black max-w-full my-20"
       >
         <form
-          className="flex justify-center items-center w-full"
+          className="flex justify-between items-center w-full"
         >
           <label htmlFor="value-input">
             <input
@@ -83,7 +83,7 @@ class WalletForm extends Component {
               onChange={ this.handleChange }
               data-testid="value-input"
               placeholder="Valor da Despesa"
-              className="placeholder:text-black w-40 mx-5 text-center h-7 rounded
+              className="placeholder:text-black w-40 mr-5 text-center h-7 rounded
               focus:bg-green-lol"
             />
           </label>
@@ -161,7 +161,7 @@ class WalletForm extends Component {
               <button
                 type="button"
                 onClick={ this.handleClickButtonEdit }
-                className=" w-44 h-7 mx-5 bg-yellow-lol text-black rounded
+                className=" w-44 h-7 ml-5 bg-yellow-lol text-black rounded
                 hover:bg-green-lol
                 disabled:bg-dark-blue-lol disabled:text-light-blue-lol focus:bg-green-lol"
               >
@@ -173,7 +173,7 @@ class WalletForm extends Component {
               <button
                 type="button"
                 onClick={ this.handleClickButtonAdd }
-                className=" w-44 h-7 mx-5 bg-yellow-lol text-black rounded
+                className=" w-44 h-7 ml-5 bg-yellow-lol text-black rounded
                 hover:bg-green-lol
                 disabled:bg-dark-blue-lol disabled:text-light-blue-lol focus:bg-green-lol"
               >

@@ -1,7 +1,7 @@
 function HeaderLogin() {
   return (
     <div
-      className="flex justify-start w-screen items-center
+      className="flex justify-start min-w-screen items-center
       px-8 py-4 bg-blue-lol"
     >
 

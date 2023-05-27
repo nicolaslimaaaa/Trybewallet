@@ -17,46 +17,146 @@ class Table extends Component {
   render() {
     const { expenses } = this.props;
     return (
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <th>Descrição</th>
-              <th>Tag</th>
-              <th>Método de pagamento</th>
-              <th>Valor</th>
-              <th>Moeda</th>
-              <th>Câmbio utilizado</th>
-              <th>Valor convertido</th>
-              <th>Moeda de conversão</th>
-              <th>Editar/Excluir</th>
+      <div
+        className="w-full text-white"
+      >
+        <table
+          className="text-center max-w-full"
+        >
+          <thead className="border border-collapse border-blue-lol ">
+            <tr
+              className="text-yellow-lol"
+            >
+              <th
+                className=""
+              >
+                Descrição
+
+              </th>
+              <th
+                className="px-3"
+              >
+                Tag
+
+              </th>
+              <th
+                className="px-3"
+              >
+                Método de pagamento
+
+              </th>
+              <th
+                className="px-3"
+              >
+                Valor
+
+              </th>
+              <th
+                className="px-3"
+              >
+                Moeda
+
+              </th>
+              <th
+                className="px-3"
+              >
+                Câmbio utilizado
+
+              </th>
+              <th
+                className="px-3"
+              >
+                Valor convertido
+
+              </th>
+              <th
+                className="px-3"
+              >
+                Moeda de conversão
+
+              </th>
+              <th
+                className="px-3"
+              >
+                Editar/Excluir
+
+              </th>
             </tr>
           </thead>
           <tbody>
             {
               expenses && (
                 expenses.map((expense) => (
-                  <tr key={ expense.id }>
-                    <td>{expense.description}</td>
-                    <td>{expense.tag}</td>
-                    <td>{expense.method}</td>
-                    <td>{(Number(expense.value)).toFixed(2)}</td>
-                    <td>{expense.exchangeRates[expense.currency].name}</td>
-                    <td>
+                  <tr
+                    key={ expense.id }
+                    className="border border-collapse border-blue-lol"
+                  >
+                    <td
+                      className="break-all w-40"
+                    >
+                      {expense.description}
+
+                    </td>
+
+                    <td
+                      className="break-all w-40"
+                    >
+                      {expense.tag}
+
+                    </td>
+
+                    <td
+                      className="break-all w-40"
+                    >
+                      {expense.method}
+
+                    </td>
+
+                    <td
+                      className="break-all w-40"
+                    >
+                      {(Number(expense.value)).toFixed(2)}
+
+                    </td>
+
+                    <td
+                      className="break-all w-40"
+                    >
+                      {expense.exchangeRates[expense.currency].name}
+
+                    </td>
+
+                    <td
+                      className="break-all w-40"
+                    >
                       {Number(expense.exchangeRates[expense.currency].ask)
                         .toFixed(2)}
                     </td>
-                    <td>
+
+                    <td
+                      className="break-all w-40"
+                    >
                       {(Number(expense.value)
                     * Number(expense.exchangeRates[expense.currency].ask)).toFixed(2)}
                     </td>
-                    <td>Real</td>
-                    <td>
+
+                    <td
+                      className="break-all w-40"
+                    >
+                      Real
+
+                    </td>
+
+                    <td
+                      className="break-all w-40"
+                    >
                       <button
                         type="button"
                         data-testid="delete-btn"
                         onClick={ this.handleClickButtonDelete }
                         id={ expense.id }
+                        className="bg-red-900 mx-1 px-2 py-1 rounded-3xl
+                        hover:bg-green-lol"
                       >
                         Excluir
 
@@ -66,6 +166,8 @@ class Table extends Component {
                         data-testid="edit-btn"
                         id={ expense.id }
                         onClick={ this.handleClickButtonEdit }
+                        className="bg-blue-800 mx-1 px-2 py-1 rounded-3xl
+                        hover:bg-green-lol"
                       >
                         Editar
 
