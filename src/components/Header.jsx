@@ -6,31 +6,51 @@ class Header extends Component {
   render() {
     const { email, expenses } = this.props;
     return (
-      <div>
-        <p
-          data-testid="email-field"
+      <section
+        className="flex flex-col justify-center w-full items-start text-green-lol"
+      >
+        <div
+          className="flex"
         >
-          { email }
+          <p className="text-white">
+            Usuário:
+          </p>
+          <p
+            data-testid="email-field"
+            className="mx-2"
+          >
+            { email }
 
-        </p>
-
-        <p
-          data-testid="total-field"
-        >
-          {
-            (expenses.reduce((acc, cur) => (
-              acc + (Number(cur.value) * Number(cur.exchangeRates[cur.currency].ask))
-            ), 0)).toFixed(2)
-          }
-        </p>
+          </p>
+        </div>
 
         <div
-          data-testid="header-currency-field"
+          className="flex"
         >
-          BRL
+          <p
+            className="text-white"
+          >
+            Despesa total:
+          </p>
+          <p
+            data-testid="total-field"
+            className="mx-2"
+          >
+            {
+              (expenses.reduce((acc, cur) => (
+                acc + (Number(cur.value) * Number(cur.exchangeRates[cur.currency].ask))
+              ), 0)).toFixed(2)
+            }
+          </p>
 
+          <p
+            data-testid="header-currency-field"
+          >
+            BRL
+
+          </p>
         </div>
-      </div>
+      </section>
     );
   }
 }

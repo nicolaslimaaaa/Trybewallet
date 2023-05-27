@@ -97,23 +97,23 @@ describe('Testa a tela da Carteira', () => {
   it('Testa se ao clicar no botão os inputs são limpos', async () => {
     renderWithRouterAndRedux(<Wallet />);
 
-    const btnAddExpense = await screen.findByRole('button', { name: /adicionar despesa/i });
-    act(() => userEvent.click(btnAddExpense));
+    const btn = screen.getByRole('button', { name: /adicionar despesa/i });
+    act(() => userEvent.click(btn));
 
-    const inputValue = await screen.findByTestId('value-input');
-    const inputDescription = await screen.findByTestId('description-input');
+    const inputExpense = await screen.findByPlaceholderText(/valor da despesa/i);
+    const inputDescription = await screen.findByPlaceholderText(/descrição/i);
 
-    expect(inputValue).toHaveValue('');
+    expect(inputExpense).toHaveValue('');
     expect(inputDescription).toHaveValue('');
   });
 
   it('Testa se é possível editar uma despesa', async () => {
     renderWithRouterAndRedux(<Wallet />, { initialState: mockExpenses });
 
-    const inputDescription = await screen.findByTestId('description-input');
-    const btnToEdit = await screen.findAllByRole('button', { name: /editar/i });
+    const inputDescription = screen.getByPlaceholderText(/descrição/i);
 
-    act(() => userEvent.click(btnToEdit[0]));
+    const btnToEdit = await screen.findAllByText(/editar/i);
+    act(() => userEvent.click(btnToEdit[1]));
 
     screen.getByText(/editar despesa/i);
 

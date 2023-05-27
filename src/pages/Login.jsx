@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { addEmail } from '../redux/actions';
+import wallet from '../image/wallet.png';
 
 class Login extends React.Component {
   state = {
@@ -43,33 +44,67 @@ class Login extends React.Component {
   render() {
     const { isDisabled } = this.state;
     return (
-      <div>
-        <form>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            onChange={ this.handleChange }
-            data-testid="email-input"
+      <div
+        className="flex w-2/3 h-1/2"
+      >
+        <div
+          className="flex justify-center items-center w-1/2"
+        >
+          <img
+            src={ wallet }
+            alt="Carteira"
+            className="w-64 rounded-3xl"
           />
+        </div>
 
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            onChange={ this.handleChange }
-            data-testid="password-input"
-          />
-
-          <button
-            type="button"
-            disabled={ isDisabled }
-            onClick={ this.handleClickButton }
+        <div
+          className="w-1/2 flex justify-center items-center border-l border-yellow-lol"
+        >
+          <form
+            className="flex flex-col w-80 h-full
+            justify-center items-center text-yellow-lol"
           >
-            Entrar
+            <label
+              htmlFor="input-email"
+            >
+              <input
+                type="email"
+                name="email"
+                id="input-email"
+                placeholder="Email"
+                onChange={ this.handleChange }
+                data-testid="email-input"
+                className="my-3 rounded text-center placeholder:text-yellow-lol
+                placeholder:font-semibold focus:border-yellow-lol h-8"
+              />
+            </label>
 
-          </button>
-        </form>
+            <label htmlFor="input-password">
+              <input
+                type="password"
+                name="password"
+                id="input-password"
+                placeholder="Password"
+                onChange={ this.handleChange }
+                data-testid="password-input"
+                className="my-3 rounded text-center placeholder:text-yellow-lol
+                placeholder:font-semibold focus:border-yellow-lol h-8"
+              />
+            </label>
+
+            <button
+              type="button"
+              disabled={ isDisabled }
+              onClick={ this.handleClickButton }
+              className="bg-yellow-lol text-white px-5 py-2 mt-6 rounded
+              hover:bg-green-lol
+              disabled:bg-dark-blue-lol disabled:text-light-blue-lol h-10"
+            >
+              Entrar
+
+            </button>
+          </form>
+        </div>
       </div>
     );
   }
