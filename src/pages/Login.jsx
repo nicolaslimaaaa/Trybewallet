@@ -45,7 +45,7 @@ class Login extends React.Component {
     const { isDisabled } = this.state;
     return (
       <div
-        className="flex w-2/3 h-1/2"
+        className="flex w-2/3 h-1/2 justify-center items-center"
       >
         <div
           className="flex justify-center items-center w-1/2"

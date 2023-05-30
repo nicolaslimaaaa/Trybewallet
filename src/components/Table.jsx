@@ -92,7 +92,7 @@ class Table extends Component {
                     className="border border-collapse border-blue-lol"
                   >
                     <td
-                      className="break-all w-40"
+                      className="break-all w-40 h-12"
                     >
                       {expense.description}
 

@@ -7,14 +7,14 @@ import HeaderLogin from './components/HeaderLogin';
 function App() {
   return (
     <div
-      className="bg-dark-blue-lol max-w-full min-h-screen flex flex-col font-volkorn"
+      className="bg-dark-blue-lol max-w-full h-screen flex flex-col font-volkorn"
     >
       <div>
         <HeaderLogin />
       </div>
 
       <div
-        className="flex justify-center items-center h-full "
+        className="flex justify-center items-center h-full"
       >
         <Switch>
           <Route exact path="/" component={ Login } />
