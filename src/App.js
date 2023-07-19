@@ -7,7 +7,7 @@ import HeaderLogin from './components/HeaderLogin';
 function App() {
   return (
     <div
-      className="bg-dark-blue-lol max-w-full h-screen flex flex-col font-volkorn"
+      className="max-w-full h-screen flex flex-col font-volkorn"
     >
       <div>
         <HeaderLogin />

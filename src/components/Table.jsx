@@ -18,7 +18,7 @@ class Table extends Component {
     const { expenses } = this.props;
     return (
       <div
-        className="w-full text-white"
+        className="w-full text-white h-[450px] overflow-scroll overflow-x-hidden"
       >
         <table
           className="text-center max-w-full"
